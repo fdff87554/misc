@@ -5,6 +5,6 @@
 * Ubuntu / Debian: `sudo apt install vim`
 
 ## Personal `.vimrc` setup
-* root: `sudo curl -L https://raw.githubusercontent.com/fdff87554/Personal-Setup/main/vim/.vimrc -o /root/.vimrc`
-* user: `curl -L https://raw.githubusercontent.com/fdff87554/Personal-Setup/main/vim/.vimrc -o ~/.vimrc`
+* root: `sudo curl -L https://links.crazyfirelee.tw/.vimrc -o /root/.vimrc`
+* user: `curl -L https://links.crazyfirelee.tw/.vimrc -o ~/.vimrc`
 
