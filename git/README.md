@@ -11,7 +11,7 @@
 ## Remote Settings
 
 - Add remote repo to local repository - `git add remote origin <repo_url>`
-  - e.g. `git remote add github git@github.com:fdff87554/Public.git`
+  - e.g. `git remote add github git@github.com:fdff87554/misc.git`
 - Show remote repositories - `git remote`
 - Show all repositories fetch & push - `git remote -v`
 - Show remote repositories details - `git remote show <tag>`
