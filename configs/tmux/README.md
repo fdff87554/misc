@@ -9,8 +9,14 @@
 
 ## Personal `.tmux.conf` setup
 
+這是一份完整、帶有個人偏好的設定（見下方「設定內容」），不只是 true color。下載到獨立檔案，再由既有的 `~/.tmux.conf` 載入，不會覆寫原本的設定；`source-file` 這行加在檔案最後，所以會覆蓋前面的同名設定，個人覆寫請寫在它之後。重複執行只會更新共用檔，不會重複加入 `source-file`。
+
 ```bash
-curl -fsSL https://raw.githubusercontent.com/fdff87554/misc/main/configs/tmux/.tmux.conf -o ~/.tmux.conf
+mkdir -p ~/.config/tmux
+curl -fsSL https://raw.githubusercontent.com/fdff87554/misc/main/configs/tmux/.tmux.conf \
+  -o ~/.config/tmux/misc.conf
+grep -qxF 'source-file ~/.config/tmux/misc.conf' ~/.tmux.conf 2>/dev/null ||
+  echo 'source-file ~/.config/tmux/misc.conf' >>~/.tmux.conf
 # 已在執行中的 tmux 重新載入
 tmux source-file ~/.tmux.conf
 ```
