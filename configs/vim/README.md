@@ -11,13 +11,15 @@
 
 這是一份完整、帶有個人偏好的設定（見下方「重點功能」），會取代整個 `~/.vimrc`；既有檔案請先備份。
 
+下載先寫到暫存檔，成功後才取代，避免中斷時留下不完整的 `.vimrc`。
+
 ```bash
 # user（既有 ~/.vimrc 先備份）
 [ -f ~/.vimrc ] && cp -p ~/.vimrc ~/.vimrc.bak.$(date +%Y%m%d_%H%M%S)
-curl -fsSL https://links.crazyfirelee.tw/.vimrc -o ~/.vimrc
+curl -fsSL https://links.crazyfirelee.tw/.vimrc -o ~/.vimrc.tmp && mv ~/.vimrc.tmp ~/.vimrc
 # root（與 user 共用同一份）
 sudo sh -c '[ -f /root/.vimrc ] && cp -p /root/.vimrc /root/.vimrc.bak.$(date +%Y%m%d_%H%M%S); true'
-sudo curl -fsSL https://links.crazyfirelee.tw/.vimrc -o /root/.vimrc
+sudo sh -c 'curl -fsSL https://links.crazyfirelee.tw/.vimrc -o /root/.vimrc.tmp && mv /root/.vimrc.tmp /root/.vimrc'
 ```
 
 ## 重點功能

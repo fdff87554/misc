@@ -8,9 +8,10 @@
 ## sys-update
 
 ```bash
-# 安裝（之後重跑同一行即可更新）
-sudo curl -fsSL https://raw.githubusercontent.com/fdff87554/misc/main/scripts/sys-update.sh \
-  -o /usr/local/bin/sys-update && sudo chmod 755 /usr/local/bin/sys-update
+# 安裝（之後重跑同一段即可更新；先下載到暫存檔，成功後才取代，避免中斷時留下不完整的腳本）
+sudo sh -c 'curl -fsSL https://raw.githubusercontent.com/fdff87554/misc/main/scripts/sys-update.sh \
+  -o /usr/local/bin/sys-update.tmp && chmod 755 /usr/local/bin/sys-update.tmp &&
+  mv /usr/local/bin/sys-update.tmp /usr/local/bin/sys-update'
 
 sys-update                 # 本機執行
 ssh -t host sys-update     # 遠端執行（-t 保留互動；不加 -t 則自動非互動，設定檔衝突時保留現有版本）

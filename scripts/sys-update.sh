@@ -4,9 +4,10 @@
 # update, full-upgrade, autoremove, autoclean, then report what is still
 # pending and whether a reboot is needed.
 #
-# Install:
-#   sudo curl -fsSL https://raw.githubusercontent.com/fdff87554/misc/main/scripts/sys-update.sh \
-#     -o /usr/local/bin/sys-update && sudo chmod 755 /usr/local/bin/sys-update
+# Install (downloads to a temp file and replaces the command only on success):
+#   sudo sh -c 'curl -fsSL https://raw.githubusercontent.com/fdff87554/misc/main/scripts/sys-update.sh \
+#     -o /usr/local/bin/sys-update.tmp && chmod 755 /usr/local/bin/sys-update.tmp &&
+#     mv /usr/local/bin/sys-update.tmp /usr/local/bin/sys-update'
 # Usage:
 #   sys-update                # interactive (normal terminal)
 #   ssh host sys-update       # no TTY: non-interactive, keeps existing config files
